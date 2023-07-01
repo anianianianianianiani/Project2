@@ -6,20 +6,20 @@
 /*   By: anbabken <anbabken@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 14:36:05 by anbabken          #+#    #+#             */
-/*   Updated: 2023/01/31 20:21:03 by anbabken         ###   ########.fr       */
+/*   Updated: 2023/06/30 20:02:00 by anbabken         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(int content)
 {
-	t_list	*new_node;
+	t_list	*new;
 
-	new_node = (t_list *)malloc(sizeof(*new_node));
-	if (new_node == NULL)
+	new = malloc(sizeof(t_list));
+	if (!new)
 		return (NULL);
-	new_node->content = content;
-	new_node->next = NULL;
-	return (new_node);
+	new->n = content;
+	new->next = NULL;
+	return (new);
 }

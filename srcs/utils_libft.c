@@ -22,23 +22,23 @@ void	put_msg(char *str, int fd)
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char		*new_str;
-	size_t		f_index;
-	size_t		s_index;
+	size_t		i;
+	size_t		j;
 
 	new_str = malloc(sizeof (char)
 			* (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!new_str)
 		return (NULL);
-	f_index = 0;
-	s_index = 0;
+	i = 0;
+	j = 0;
 	if (s1)
-		while (s1[f_index])
-			new_str[s_index++] = s1[f_index++];
-	f_index = 0;
+		while (s1[i])
+			new_str[j++] = s1[i++];
+	i = 0;
 	if (s2)
-		while (s2[f_index])
-			new_str[s_index++] = s2[f_index++];
-	new_str[s_index] = '\0';
+		while (s2[i])
+			new_str[j++] = s2[i++];
+	new_str[j] = '\0';
 	free(s1);
 	return (new_str);
 }
@@ -66,7 +66,7 @@ int	ft_atoi(const char *str)
 	res = 0;
 	is_negative = 1;
 	if (ft_strncmp(str, "-0", 2) == 0 || ft_strncmp(str, "+0", 2) == 0)
-		put_msg("Number is incorrect", 2);
+		put_msg("Error", 2);
 	while (*str == 32 || (*str >= 9 && *str <= 13))
 		str++;
 	if (*str == '-')
@@ -78,11 +78,11 @@ int	ft_atoi(const char *str)
 		res = res * 10 + *str - '0';
 		if ((res > INT_MAX && is_negative == 1)
 			|| ((res * -1) < INT_MIN && is_negative == -1))
-			put_msg("Number is incorrect", 2);
+			put_msg("Error", 2);
 		str++;
 	}
 	if (*str != '\0')
-		put_msg("Number is incorrect", 2);
+		put_msg("Error", 2);
 	return (res * is_negative);
 }
 

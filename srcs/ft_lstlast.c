@@ -6,11 +6,11 @@
 /*   By: anbabken <anbabken@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 15:09:45 by anbabken          #+#    #+#             */
-/*   Updated: 2023/01/31 15:09:59 by anbabken         ###   ########.fr       */
+/*   Updated: 2023/06/30 19:52:36 by anbabken         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {
