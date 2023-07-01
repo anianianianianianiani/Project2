@@ -6,11 +6,12 @@
 /*   By: anbabken <anbabken@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 15:41:07 by anbabken          #+#    #+#             */
-/*   Updated: 2023/06/30 20:04:20 by anbabken         ###   ########.fr       */
+/*   Updated: 2023/07/01 17:53:09 by anbabken         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anbabken <anbabken@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/01 17:52:40 by anbabken          #+#    #+#             */
+/*   Updated: 2023/07/01 18:56:48 by anbabken         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	validation(char **res)
@@ -96,7 +108,7 @@ void	valid_check(char **argv)
 				ft_strlen(argv[i])) == 0 || ft_strncmp(argv[i], "+\0",
 				ft_strlen(argv[i])) == 0)
 		{
-			put_msg("Enter valid arguments", 2);
+			put_msg("Error", 2);
 			exit(0);
 		}
 		i++;

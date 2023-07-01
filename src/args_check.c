@@ -6,7 +6,7 @@
 /*   By: anbabken <anbabken@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 19:53:11 by anbabken          #+#    #+#             */
-/*   Updated: 2023/06/30 19:53:12 by anbabken         ###   ########.fr       */
+/*   Updated: 2023/07/01 19:27:45 by anbabken         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,10 @@ char	*limits_check(char *str)
 	{
 		res = (res * 10) + ((int)*str - '0');
 		if ((res > INT_MAX && mop == 1) || ((res * -1) < INT_MIN && mop == -1))
-			return (ft_strdup("voch"));
+			return (ft_strdup("no"));
 		str++;
 	}
-	return (ft_strdup("ayo"));
+	return (ft_strdup("yes"));
 }
 
 int	dup_check(char **group)
@@ -110,7 +110,7 @@ int	arg_check(char **group)
 		if (atoi_check(group[i]) == 1)
 			free_dp(&group, 1);
 		check = limits_check(group[i]);
-		if (ft_strlen(check) == 4)
+		if (ft_strlen(check) == 2)
 		{
 			free(check);
 			free_dp(&group, 1);

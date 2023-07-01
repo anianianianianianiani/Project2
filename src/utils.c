@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anbabken <anbabken@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/01 17:52:58 by anbabken          #+#    #+#             */
+/*   Updated: 2023/07/01 19:13:46 by anbabken         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include	"push_swap.h"
 
 char	*join_str(char *s1, char *s2)
@@ -22,6 +34,7 @@ char	*join_str(char *s1, char *s2)
 	return (str);
 }
 
+
 void	free_dp(char ***group, int a)
 {
 	int	i;
@@ -41,25 +54,25 @@ void	free_dp(char ***group, int a)
 	}
 }
 
-t_stack	*make_stack(char ***group)
-{
-	t_stack	*stack;
-	char	**tp;
-	t_list	*tmp;
-	int		i;
+// t_stack	*make_stack(char ***group)
+// {
+// 	t_stack	*stack;
+// 	char	**tp;
+// 	t_list	*tmp;
+// 	int		i;
 
-	stack = malloc(sizeof(t_stack));
-	stack->b = NULL;
-	tp = *group;
-	stack->a = ft_lstnew(ft_atoi(tp[0]));
-	i = 1;
-	while (tp[i])
-	{
-		tmp = ft_lstnew(ft_atoi(tp[i]));
-		ft_lstadd_back(&stack->a, tmp);
-		i++;
-	}
-	ft_lstlast(stack->a)->next = NULL;
-	free_dp(group, 0);
-	return (stack);
-}
+// 	stack = malloc(sizeof(t_stack));
+// 	stack->b = NULL;
+// 	tp = *group;
+// 	stack->a = ft_lstnew(ft_atoi(tp[0]));
+// 	i = 1;
+// 	while (tp[i])
+// 	{
+// 		tmp = ft_lstnew(ft_atoi(tp[i]));
+// 		ft_lstadd_back(&stack->a, tmp);
+// 		i++;
+// 	}
+// 	ft_lstlast(stack->a)->next = NULL;
+// 	free_dp(group, 0);
+// 	return (stack);
+// }
