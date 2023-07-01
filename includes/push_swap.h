@@ -5,7 +5,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <limits.h>
-# include "get_next_line.h"
+// # include "get_next_line.h"
 
 typedef struct s_list
 {
@@ -70,7 +70,7 @@ void	sort2(t_stack *stack);
 void	sort3(t_stack *stack);
 void	sort5(t_stack *stack);
 void	push_min(t_stack *stack, int min);
-int		matematikakan_hashvarkner(int sz);
+int		dev_return(int sz);
 void	push_to_b(t_stack *stack);
 void	push_to_a(t_stack *stack);
 int		sorted(t_list *a);

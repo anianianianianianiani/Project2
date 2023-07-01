@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 		if (arg_check(test) != 0)
 			free_dp(&test, 1);
 		stack = make_stack(&test);
-		push_swap(stack);
+		//push_swap(stack);
 		free_stack(stack);
 	}
 	return (0);

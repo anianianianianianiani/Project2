@@ -6,11 +6,37 @@
 /*   By: anbabken <anbabken@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 15:41:07 by anbabken          #+#    #+#             */
-/*   Updated: 2023/01/31 14:01:04 by anbabken         ###   ########.fr       */
+/*   Updated: 2023/06/30 20:04:20 by anbabken         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*str;
+	size_t	i;
+	size_t	size;
+
+	if (!s)
+		return (NULL);
+	if ((size_t)start > (size_t)ft_strlen(s))
+		return (ft_strdup(""));
+	size = ft_strlen(s + start);
+	if (size < len)
+		len = size;
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		str[i] = s[start];
+		start++;
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
+}
 
 int	free_malloc(char **str)
 {

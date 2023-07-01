@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anbabken <anbabken@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 15:03:07 by anbabken          #+#    #+#             */
-/*   Updated: 2023/01/31 15:03:26 by anbabken         ###   ########.fr       */
+/*   Created: 2023/01/31 15:01:06 by anbabken          #+#    #+#             */
+/*   Updated: 2023/06/30 19:52:40 by anbabken         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	unsigned int	count;
-
-	count = 0;
-	while (lst)
+	if (lst && new)
 	{
-		lst = lst->next;
-		count++;
+		new->next = *lst;
+		*lst = new;
 	}
-	return (count);
 }

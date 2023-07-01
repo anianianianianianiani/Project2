@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anbabken <anbabken@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 15:01:06 by anbabken          #+#    #+#             */
-/*   Updated: 2023/01/31 15:01:32 by anbabken         ###   ########.fr       */
+/*   Created: 2023/01/31 15:09:45 by anbabken          #+#    #+#             */
+/*   Updated: 2023/06/30 19:52:36 by anbabken         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (lst && new)
+	while (lst)
 	{
-		new->next = *lst;
-		*lst = new;
+		if (!lst->next)
+			return (lst);
+		lst = lst->next;
 	}
+	return (lst);
 }

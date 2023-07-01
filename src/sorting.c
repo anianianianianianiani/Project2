@@ -16,19 +16,19 @@ void	indexing(t_list *a, int *arr, int size)
 {
 	int		i;
 	int		j;
-	t_list	*cursor;
+	t_list	*lst;
 
 	i = 0;
-	cursor = a;
+	lst = a;
 	while (i < size)
 	{
 		j = 0;
-		while (cursor->n != arr[j])
+		while (lst->n != arr[j])
 		{
 			j++;
 		}
-		cursor->index = j;
-		cursor = cursor->next;
+		lst->index = j;
+		lst = lst->next;
 		i++;
 	}
 }
@@ -67,7 +67,7 @@ void	selection_sort(int *arr, t_list *a)
 	indexing(a, arr, n);
 }
 
-int	matematikakan_hashvarkner(int sz)
+int	dev_return(int sz)
 {
 	if (sz <= 100)
 		return ((15 * sz) / 100);
