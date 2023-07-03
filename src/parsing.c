@@ -6,7 +6,7 @@
 /*   By: anbabken <anbabken@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 17:52:40 by anbabken          #+#    #+#             */
-/*   Updated: 2023/07/01 18:56:48 by anbabken         ###   ########.fr       */
+/*   Updated: 2023/07/03 20:16:38 by anbabken         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,33 +40,6 @@ int	validation(char **res)
 	return (1);
 }
 
-char	**valid_args(char **argv, int argc)
-{
-	int		i;
-	char	*str;
-	char	*tmp;
-	char	**res;
-
-	str = NULL;
-	i = 1;
-	while (i < argc)
-	{
-		tmp = ft_strjoin(ft_strdup(argv[i++]), " ");
-		str = ft_strjoin(str, tmp);
-		free(tmp);
-	}
-	res = ft_split(str, ' ');
-	free(str);
-	if (!res)
-		return (NULL);
-	i = 0;
-	if (validation(res) < 0)
-	{
-		put_msg("Error", 2);
-		exit (-1);
-	}
-	return (res);
-}
 
 int	fill_list(t_list **lst, int content)
 {
@@ -104,8 +77,7 @@ void	valid_check(char **argv)
 	i = 1;
 	while (argv[i])
 	{
-		if (!argv[i] || !*argv[i] || ft_strncmp(argv[i], "-\0",
-				ft_strlen(argv[i])) == 0 || ft_strncmp(argv[i], "+\0",
+		if (!argv[i] || !*argv[i] || ft_strncmp(argv[i], " ",
 				ft_strlen(argv[i])) == 0)
 		{
 			put_msg("Error", 2);

@@ -6,7 +6,7 @@
 /*   By: anbabken <anbabken@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 19:23:03 by anbabken          #+#    #+#             */
-/*   Updated: 2023/07/01 19:23:04 by anbabken         ###   ########.fr       */
+/*   Updated: 2023/07/03 20:16:45 by anbabken         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int		s_all(t_stack *stack, t_mode mod);
 int		p_all(t_stack *stack, t_mode mod);
 int		r_all(t_stack *stack, t_mode mod);
 int		rr_all(t_stack *stack, t_mode mod);
-char	**valid_args(char **argv, int argc);
 int		fill_list(t_list **lst, int content);
 int		ft_atoi(const char *str);
 size_t	ft_strlen(const char *str);
