@@ -6,7 +6,7 @@
 /*   By: anbabken <anbabken@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 19:23:03 by anbabken          #+#    #+#             */
-/*   Updated: 2023/07/03 20:16:45 by anbabken         ###   ########.fr       */
+/*   Updated: 2023/07/06 17:03:43 by anbabken         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,26 +33,27 @@ typedef struct s_stack
 	int		len;
 }	t_stack;
 
-typedef enum mode_e
-{
-	A,
-	B,
-	BOTH
-}	t_mode;
-
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-int		s_all(t_stack *stack, t_mode mod);
-int		p_all(t_stack *stack, t_mode mod);
-int		r_all(t_stack *stack, t_mode mod);
-int		rr_all(t_stack *stack, t_mode mod);
+int		swap(t_list **stack);
+int		sa(t_list **stack_a);
+int		sb(t_list **stack_b);
+int		ss(t_list **stack_a, t_list **stack_b);
+int		push(t_list **stack_to, t_list **stack_from);
+int		pa(t_list **stack_a, t_list **stack_b);
+int		pb(t_list **stack_a, t_list **stack_b);
+int		rotate(t_list **stack);
+int		ra(t_list **stack_a);
+int		rb(t_list **stack_b);
+int		rr(t_list **stack_a, t_list **stack_b);
+int		reverse_rotate(t_list **stack);
+int		rra(t_list **stack_a);
+int		rrb(t_list **stack_b);
+int		rrr(t_list **stack_a, t_list **stack_b);
+
 int		fill_list(t_list **lst, int content);
 int		ft_atoi(const char *str);
 size_t	ft_strlen(const char *str);
 void	put_msg(char *str, int fd);
-int		shift_rr(t_list **lst);
-int		shift(t_list **lst);
-int		swap(t_list *lst);
-int		push(t_list **dst, t_list **src);
 t_list	*ft_lstnew(int content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
@@ -75,24 +76,6 @@ int		validation(char **res);
 int		fill_stack(t_stack *stack, char **res);
 void	push_swap(t_stack *stack);
 void	valid_check(char **argv);
-void	selection_sort(int *arr, t_list *a);
-void	swap_arr_sorting(int *xp, int *yp);
-void	sort2(t_stack *stack);
-void	sort3(t_stack *stack);
-void	sort5(t_stack *stack);
-void	push_min(t_stack *stack, int min);
-int		dev_return(int sz);
-void	push_to_b(t_stack *stack);
-void	push_to_a(t_stack *stack);
-int		sorted(t_list *a);
-void	get_indexs(t_list *cursor);
+void	ft_putendl_fd(char *s, int fd);
 
-//bonus
-// char	*ft_strtrim(char const *s1, char const *set);
-// char	*ft_substr(char const *s, unsigned int start, size_t len);
-// int		checker(t_stack *stack);
-// int		s_all_ch(t_stack *stack, t_mode mod);
-// int		p_all_ch(t_stack *stack, t_mode mod);
-// int		r_all_ch(t_stack *stack, t_mode mod);
-// int		rr_all_ch(t_stack *stack, t_mode mod);
 #endif
